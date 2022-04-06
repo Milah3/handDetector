@@ -6,18 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hand Detection App</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        html,
+        body {
+            margin: 0 !important;
+            min-width: 100vw !important;
+            /* overflow-x: hidden; */
+            display: grid;
+            place-items: center;
+        }
+
+        body {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            min-width: 100vw;
+            min-height: 100vh;
+            border: 1px solid green;
+        }
+
+        canvas {
+            border: 1px solid orange;
+            background-color: orange;
+            border-radius: 10px;
+            height: clamp(50%, 80%, 100%) !important;
+            width: clamp(50%, 80%, 100%) !important;
+
+        }
+
+        video {
+            height: clamp(50%, 80%, 100%) !important;
+            width: clamp(50%, 80%, 100%) !important;
+            border: 1px solid red;
+            background-color: #ff0000;
+            border-radius: 10px;
+        }
+
+        #tuple {
+            display: inline-flex;
+            gap: 20px;
+            padding: 0px 40px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Hand Detector using Tensorflow a.k.a. handtrackjs</h1>
+
     <audio src="./Michael Jordan Stop It, Get Some Help.mp3" id="audio"></audio>
-    <video id="video"> </video>
-
-    <canvas id="canvas">
-
-    </canvas>
-
+    <div id="tuple">
+        <video height="100%" id="video"> </video>
+        <canvas id="canvas"></canvas>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/handtrackjs@latest/dist/handtrack.min.js"></script>
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script> -->
